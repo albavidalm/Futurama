@@ -1,27 +1,32 @@
 import React, { useState, useEffect } from "react";
-import "../stylesheets/App.scss";
+import CharacterList from "./CharacterList";
+import Filters from "./Filters";
 import getApiData from "../services/api";
+import ls from "../services/local-storage";
 import Header from "./Header";
 import Footer from "./Footer";
-import CharacterList from "./CharacterList";
 
 const App = () => {
-  const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState(ls.get("characters", []));
 
+  //COMPROBANDO SI HAY DATOS EN EL LOCALSTORAGE -------------
   useEffect(() => {
-    getApiData().then((charactersData) => {
-      setCharacters(charactersData);
-    });
+    if (characters.length === 0) {
+      getApiData().then((charactersData) => {
+        setCharacters(charactersData);
+      });
+    }
   }, []);
+
+  //GUARDANDO EN LOCALSTORAGE -------------------------------
+  useEffect(() => {
+    ls.set("characters", characters);
+  }, [characters]);
 
   return (
     <>
-      <div>
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
-      </div>
       <Header />
+      <Filters />
       <main className="mainContent">
         <CharacterList characters={characters} />
       </main>

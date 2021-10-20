@@ -1,8 +1,6 @@
 .body {
   width: 100vw;
-  max-height: -webkit-fit-content;
-  max-height: -moz-fit-content;
-  max-height: fit-content;
+  max-height: 100vh;
   background: radial-gradient(ellipse at bottom, #253549 0%, #090a0f 100%);
 }
 
@@ -478,10 +476,16 @@ template {
       -ms-flex-direction: column;
           flex-direction: column;
   border-radius: 5px;
-  background-color: #03f196;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .card__image--container {
@@ -489,36 +493,24 @@ template {
   height: 150px;
   min-height: 150px;
   overflow: hidden;
+  border-radius: 50%;
   background-color: #fff;
 }
 
 .card__image {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center center;
-     object-position: center center;
+  padding-top: 10px;
 }
 
 .card__title {
   font-family: "Poppins", sans-serif;
+  margin: 10px;
 }
 
 .card__specie {
   font-family: "Roboto", sans-serif;
-}
-
-.upper-container {
-  height: 180px;
-  background: #03f196;
-}
-
-.lower-container {
-  height: 120px;
-  max-height: 108px;
-  max-width: 150px;
-  background: #d866f5;
+  margin: 10px;
 }
 
 .company {
@@ -541,10 +533,113 @@ template {
   display: grid;
   -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 20px;
+  gap: 30px 30px;
   padding: 0;
   justify-items: center;
   margin-bottom: 60px;
+}
+
+.form {
+  margin: 40px;
+  height: auto;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  background: -webkit-gradient(linear, right top, left top, from(#fa8ffc3b), to(#3fd0f05d));
+  background: linear-gradient(270deg, #fa8ffc3b, #3fd0f05d);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 19s ease infinite;
+  animation: AnimationName 19s ease infinite;
+  font-size: 1.1rem;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  line-height: 40px;
+}
+
+.form__name {
+  border: transparent;
+}
+
+.form__name--label {
+  padding-right: 0.8rem;
+}
+
+.form__name--input {
+  height: 1.3rem;
+  width: 220px;
+  background-color: rgba(255, 255, 255, 0.603);
+  padding-left: 0.5rem;
+  caret-color: #f7ef71;
+}
+
+.form__name--input::-webkit-input-placeholder {
+  color: grey;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.form__name--input:-ms-input-placeholder {
+  color: grey;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.form__name--input::-ms-input-placeholder {
+  color: grey;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.form__name--input::placeholder {
+  color: grey;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.form__specie {
+  border: transparent;
+}
+
+.form__specie--select {
+  margin-left: 0.8rem;
+  font-size: 0.8rem;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .footer {

@@ -5,8 +5,13 @@
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-  background-color: rgb(3, 241, 150);
   align-items: center;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .card__image--container {
@@ -14,32 +19,22 @@
   height: 150px;
   min-height: 150px;
   overflow: hidden;
+  border-radius: 50%;
   background-color: #fff;
 }
 .card__image {
   width: 100%;
   height: auto;
-  object-fit: cover;
-  object-position: center center;
+  padding-top: 10px;
 }
 
 .card__title {
   font-family: $font-main;
+  margin: 10px;
 }
 .card__specie {
   font-family: $font-info;
-}
-
-.upper-container {
-  height: 180px;
-  background: rgb(3, 241, 150);
-}
-
-.lower-container {
-  height: 120px;
-  max-height: 108px;
-  max-width: 150px;
-  background: rgb(216, 102, 245);
+  margin: 10px;
 }
 
 .company {

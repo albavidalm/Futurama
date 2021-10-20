@@ -1,0 +1,81 @@
+.form {
+  margin: 40px;
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  //background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  //border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(270deg, #fa8ffc3b, #3fd0f05d);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 19s ease infinite;
+  -moz-animation: AnimationName 19s ease infinite;
+  animation: AnimationName 19s ease infinite;
+  font-size: 1.1rem;
+  color: #fff;
+  font-family: $font-main;
+  line-height: 40px;
+  &__name {
+    border: transparent;
+    &--label {
+      padding-right: 0.8rem;
+    }
+    &--input {
+      height: 1.3rem;
+      width: 220px;
+      background-color: rgba(255, 255, 255, 0.603);
+      padding-left: 0.5rem;
+      caret-color: #f7ef71;
+      &::placeholder {
+        color: grey;
+        font-size: 0.9rem;
+        font-style: italic;
+      }
+    }
+  }
+  &__specie {
+    border: transparent;
+    &--select {
+      margin-left: 0.8rem;
+      font-size: 0.8rem;
+    }
+  }
+}
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
