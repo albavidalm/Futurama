@@ -4,21 +4,22 @@ import logo from "../images/Planet_Express_logo.svg";
 const CharacterCard = (props) => {
   const getSpecie = () => {
     if (props.character.specie === "Martian") {
-      return <i className="fas fa-rocket fa-specie"></i>;
+      return <i class="fas fa-rocket"></i>;
     } else if (props.character.specie === "Human") {
-      return <i className="fas fa-user fa-specie"></i>;
+      return <i class="fas fa-user"></i>;
     } else if (props.character.specie === "Robot") {
-      return <i className="fas fa-robot fa-specie"></i>;
+      return <i class="fas fa-robot"></i>;
     } else if (props.character.specie === "Mutant") {
-      return <i className="fas fa-eye fa-specie"></i>;
+      return <i class="fas fa-eye"></i>;
     } else if (props.character.specie === "Decapodian") {
-      return <i className="fas fa-ethernet fa-specie"></i>;
+      return <i class="fas fa-pastafarianism"></i>;
     } else if (props.character.specie === "Omicronian") {
-      return <i className="fas fa-frog fa-specie"></i>;
+      return <i class="fas fa-frog"></i>;
     } else if (props.character.specie === "Amphibiosans") {
-      return <i className="fas fa-hand-spock fa-specie"></i>;
+      return <i class="fas fa-hand-spock"></i>;
     }
   };
+
   return (
     <li className="card">
       <div className="card__image--container">
@@ -29,12 +30,12 @@ const CharacterCard = (props) => {
           title={props.character.name}
         />
       </div>
-
       <h4 className="card__title">{props.character.name}</h4>
+
       <p className="card__specie">
-        {props.character.specie}
-        {getSpecie()}
+        {props.character.specie} {getSpecie()}
       </p>
+
       <p className="card__origin">{props.character.origin}</p>
       <div className="company">
         <img

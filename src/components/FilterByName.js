@@ -20,6 +20,7 @@ const FilterByName = (props) => {
         name="name"
         id="name"
         onChange={handleOnChange}
+        autoFocus
       />
     </fieldset>
   );
