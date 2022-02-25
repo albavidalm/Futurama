@@ -1,11 +1,17 @@
 .body {
   //height: 100%;
   width: 100vw;
-  max-height: 100vh;
+  //max-height: 100vh;
   //min-height: fit-content;
   background: radial-gradient(ellipse at bottom, #253549 0%, #090a0f 100%);
   //overflow: hidden;
   //background-size: cover;
+}
+.mainContent {
+  margin: 0 1.5rem;
+  @include tablet {
+    margin: 0 40px;
+  }
 }
 
 // #stars {
@@ -569,7 +575,3 @@
 //     transform: translateY(-2000px);
 //   }
 // }
-
-.mainContent {
-  margin: 0 40px;
-}

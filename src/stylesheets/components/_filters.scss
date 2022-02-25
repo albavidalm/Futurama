@@ -1,9 +1,9 @@
 .form {
-  margin: 40px;
+  margin: 1.5rem;
   height: auto;
-  width: auto;
+
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   //background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -19,15 +19,16 @@
   font-size: 1.1rem;
   color: #fff;
   font-family: $font-main;
-  line-height: 40px;
+
   &__name {
     border: transparent;
     &--label {
       padding-right: 0.8rem;
     }
     &--input {
-      height: 1.3rem;
-      width: 220px;
+      //height: 1.3rem;
+      margin-top: 0.5rem;
+      width: 100%;
       background-color: rgba(255, 255, 255, 0.603);
       padding-left: 0.5rem;
       caret-color: #f7ef71;
@@ -40,14 +41,25 @@
         font-size: 0.9rem;
         font-style: italic;
       }
+      @include tablet {
+        width: 220px;
+        margin-top: 0;
+      }
     }
   }
+
   &__specie {
     border: transparent;
     &--select {
       margin-left: 0.8rem;
       font-size: 0.8rem;
     }
+  }
+  @include tablet {
+    flex-direction: row;
+    margin: 40px;
+    // width: 100%;
+    line-height: 40px;
   }
 }
 @-webkit-keyframes AnimationName {

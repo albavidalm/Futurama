@@ -1,36 +1,51 @@
 .card {
-  width: 200px;
-  height: 300px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  border-radius: 5px;
   align-items: center;
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
+  background: rgba(13, 248, 170, 0.384);
   border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  height: 60vh;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  @include tablet {
+    width: 200px;
+    height: 300px;
+  }
+}
+.whiteback {
+  background-color: rgba(255, 255, 255, 0.493);
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0 1rem 0;
+  align-items: center;
 }
 
 .card__image--container {
-  width: 150px;
-  height: 150px;
-  min-height: 150px;
-  overflow: hidden;
-  border-radius: 50%;
   background-color: #fff;
+  border-radius: 50%;
+  height: 15rem;
+  overflow: hidden;
+  width: 15rem;
+  @include tablet {
+    height: 150px;
+    width: 150px;
+    min-height: 150px;
+  }
 }
+
 .card__image {
   width: 100%;
-  height: auto;
-  padding-top: 10px;
 }
 
 .card__title {
   font-family: $font-main;
-  margin: 10px;
 }
 .card__specie {
   font-family: $font-info;

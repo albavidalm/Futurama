@@ -30,13 +30,17 @@ const CharacterCard = (props) => {
           title={props.character.name}
         />
       </div>
-      <h4 className="card__title">{props.character.name}</h4>
 
-      <p className="card__specie">
-        {props.character.specie} {getSpecie()}
-      </p>
+      <div className="whiteback">
+        <h4 className="card__title">{props.character.name}</h4>
 
-      <p className="card__origin">{props.character.origin}</p>
+        <p className="card__specie">
+          {props.character.specie} {getSpecie()}
+        </p>
+
+        <p className="card__origin">{props.character.origin}</p>
+      </div>
+
       <div className="company">
         <img
           src={logo}

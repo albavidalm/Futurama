@@ -3,9 +3,9 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="footer">
-      <p className="author">Alba Vidal</p>
+      <p className="footer__author">Alba Vidal</p>
       <a
-        className="link"
+        className="footer__link"
         href="mailto:albavidalm@gmail.com"
         target="_blank"
         rel="noreferrer"
@@ -13,7 +13,7 @@ const Footer = () => {
         <i className="fas fa-envelope"></i>
       </a>
       <a
-        className="link"
+        className="footer__link"
         href="https://www.linkedin.com/in/albavidalm/"
         target="_blank"
         rel="noreferrer"
@@ -21,7 +21,7 @@ const Footer = () => {
         <i className="fab fa-linkedin"></i>
       </a>
       <a
-        className="link"
+        className="footer__link"
         href="https://github.com/albavidalm"
         target="_blank"
         rel="noreferrer"
