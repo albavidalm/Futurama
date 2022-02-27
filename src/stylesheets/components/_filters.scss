@@ -1,7 +1,6 @@
 .form {
   margin: 1.5rem;
   height: auto;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,7 +15,7 @@
   -webkit-animation: AnimationName 19s ease infinite;
   -moz-animation: AnimationName 19s ease infinite;
   animation: AnimationName 19s ease infinite;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #fff;
   font-family: $font-main;
 
@@ -31,10 +30,10 @@
       width: 100%;
       background-color: rgba(255, 255, 255, 0.603);
       padding-left: 0.5rem;
-      caret-color: #f7ef71;
+      caret-color: #ff5b5a;
       &:focus {
-        background: yellow;
-        color: red;
+        background: #efd555;
+        color: #ff5b5a;
       }
       &::placeholder {
         color: grey;
