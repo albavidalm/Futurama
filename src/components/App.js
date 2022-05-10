@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from "react";
-import CharacterList from "./CharacterList";
-import Filters from "./Filters";
-import getApiData from "../services/api";
-import ls from "../services/local-storage";
+import { Route, Switch, Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import Filters from "./Filters";
+import CharacterList from "./CharacterList";
+import CharacterDetail from "./CharacterDetail";
+import NotFound from "./NotFound";
+import getApiData from "../services/getApiData";
+import ls from "../services/local-storage";
+//import ResetButton from "./ResetButton";
 
 const App = () => {
   const [characters, setCharacters] = useState(ls.get("characters", []));
-  const [nameFilter, setNameFilter] = useState("");
-  const [specieFilter, setSpecieFilter] = useState("all");
-  const [originFilter, setOriginFilter] = useState("all");
-  const [ordered, setOrdered] = useState(false);
+  const [nameFilter, setNameFilter] = useState(ls.get("nameFilter", ""));
+  const [specieFilter, setSpecieFilter] = useState(
+    ls.get("specieFilter", "all")
+  );
+  const [originFilter, setOriginFilter] = useState(
+    ls.get("originFilter", "all")
+  );
+  const [ordered, setOrdered] = useState(ls.get("ordered", false));
 
   //COMPROBANDO SI HAY DATOS EN EL LOCALSTORAGE -------------
   useEffect(() => {
@@ -27,6 +35,22 @@ const App = () => {
     ls.set("characters", characters);
   }, [characters]);
 
+  useEffect(() => {
+    ls.set("nameFilter", nameFilter);
+  }, [nameFilter]);
+
+  useEffect(() => {
+    ls.set("specieFilter", specieFilter);
+  }, [specieFilter]);
+
+  useEffect(() => {
+    ls.set("originFilter", originFilter);
+  }, [originFilter]);
+
+  useEffect(() => {
+    ls.set("ordered", ordered);
+  }, [ordered]);
+
   //EVENT HANDLERS ------------------------------------------
   const handleFilter = (data) => {
     if (data.key === "name") {
@@ -38,6 +62,13 @@ const App = () => {
     } else if (data.key === "ordered") {
       setOrdered(data.checked);
     }
+  };
+
+  const handleReset = () => {
+    setNameFilter("");
+    setSpecieFilter("all");
+    setOriginFilter("all");
+    setOrdered(false);
   };
 
   //RENDER --------------------------------------------------
@@ -73,13 +104,48 @@ const App = () => {
     });
   }
 
+  const renderCharacterDetail = (props) => {
+    const routeCharacterId = parseInt(props.match.params.id);
+    const foundCharacter = characters.find((character) => {
+      return character.id === routeCharacterId;
+    });
+    //console.log("Router props: ", props.match.params.id, foundCharacter);
+    if (foundCharacter !== undefined) {
+      return <CharacterDetail character={foundCharacter} />;
+    } else {
+      // Ruta para cuando se escribe mal en el navegador la id del character
+      return (
+        <>
+          <Link className="goback" to="/">
+            <i className="fas fa-chevron-circle-left"></i>
+            Go back
+          </Link>
+          <NotFound />
+        </>
+      );
+    }
+  };
+
   return (
     <>
       <Header />
-      <Filters handleFilter={handleFilter} />
-      <main className="mainContent">
-        <CharacterList characters={filteredCharacters} />
-      </main>
+
+      <Switch>
+        <Route exact path="/">
+          <main className="mainContent">
+            <Filters handleFilter={handleFilter} handleReset={handleReset} />
+            {/* <ResetButton handleReset={handleReset} /> */}
+            <CharacterList characters={filteredCharacters} />
+          </main>
+        </Route>
+
+        <Route path="/character/:id" render={renderCharacterDetail} />
+
+        <Route>
+          <NotFound />
+        </Route>
+      </Switch>
+
       <Footer />
     </>
   );

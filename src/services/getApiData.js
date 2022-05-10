@@ -10,8 +10,9 @@ const getApiData = () => {
           picture: character.images.main,
           specie: character.species,
           origin: character.homePlanet || "Unknown",
-          occupation: character.occupation,
+          occupation: character.occupation || "Unknown",
           age: character.age,
+          sayings: character.sayings,
         };
       });
       return cleanData;

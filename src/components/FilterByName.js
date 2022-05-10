@@ -19,6 +19,7 @@ const FilterByName = (props) => {
         placeholder="Ex: Bender"
         name="name"
         id="name"
+        value={props.FilterByName}
         onChange={handleOnChange}
         autoFocus
       />

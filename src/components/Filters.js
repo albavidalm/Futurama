@@ -3,6 +3,7 @@ import FilterByName from "./FilterByName";
 import FilterBySpecie from "./FilterBySpecie";
 import FilterByOrigin from "./FilterByOrigin";
 import FilterAlphabetically from "./FilterAlphabetically";
+import ResetButton from "./ResetButton";
 
 const Filters = (props) => {
   const handleSubmit = (ev) => {
@@ -10,7 +11,7 @@ const Filters = (props) => {
   };
   return (
     <section>
-      <form className="form" action="" onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <FilterByName handleFilter={props.handleFilter} />
         <FilterBySpecie handleFilter={props.handleFilter} />
         <FilterByOrigin handleFilter={props.handleFilter} />
@@ -18,6 +19,7 @@ const Filters = (props) => {
           ordered={props.ordered}
           handleFilter={props.handleFilter}
         />
+        <ResetButton handleReset={props.handleReset} />
       </form>
     </section>
   );
