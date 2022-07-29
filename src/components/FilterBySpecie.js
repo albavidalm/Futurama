@@ -1,8 +1,8 @@
 import React from "react";
 
-const FilterBySpecie = (props) => {
+const FilterBySpecie = ({ handleFilter, specieFilter }) => {
   const handleOnChange = (ev) => {
-    props.handleFilter({
+    handleFilter({
       value: ev.target.value,
       key: "specie",
     });
@@ -16,7 +16,7 @@ const FilterBySpecie = (props) => {
           name="specie"
           id="specie"
           onChange={handleOnChange}
-          value={props.FilterBySpecie}
+          value={specieFilter}
         >
           <option value="all">All</option>
           <option value="Amphibiosans">Amphibiosans</option>

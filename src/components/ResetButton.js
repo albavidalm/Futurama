@@ -1,7 +1,4 @@
-const ResetButton = (props) => {
-  const handleReset = () => {
-    props.handleReset();
-  };
+const ResetButton = ({ handleReset }) => {
   return (
     <button className="reset-btn" type="button" onClick={handleReset}>
       Reset

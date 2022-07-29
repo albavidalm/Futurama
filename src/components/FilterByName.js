@@ -1,8 +1,8 @@
 import React from "react";
 
-const FilterByName = (props) => {
+const FilterByName = ({ nameFilter, handleFilter }) => {
   const handleOnChange = (ev) => {
-    props.handleFilter({
+    handleFilter({
       value: ev.target.value,
       key: "name",
     });
@@ -19,7 +19,7 @@ const FilterByName = (props) => {
         placeholder="Ex: Bender"
         name="name"
         id="name"
-        value={props.FilterByName}
+        value={nameFilter}
         onChange={handleOnChange}
         autoFocus
       />

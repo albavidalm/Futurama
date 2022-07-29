@@ -1,8 +1,8 @@
 import React from "react";
 
-const FilterByOrigin = (props) => {
+const FilterByOrigin = ({ handleFilter, originFilter }) => {
   const handleOnChange = (ev) => {
-    props.handleFilter({
+    handleFilter({
       value: ev.target.value,
       key: "origin",
     });
@@ -16,6 +16,7 @@ const FilterByOrigin = (props) => {
           name="origin"
           id="origin"
           onChange={handleOnChange}
+          value={originFilter}
         >
           <option value="all">All</option>
           <option value="Earth">Earth</option>

@@ -28,28 +28,17 @@ const App = () => {
         setCharacters(charactersData);
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //GUARDANDO EN LOCALSTORAGE -------------------------------
   useEffect(() => {
     ls.set("characters", characters);
-  }, [characters]);
-
-  useEffect(() => {
     ls.set("nameFilter", nameFilter);
-  }, [nameFilter]);
-
-  useEffect(() => {
     ls.set("specieFilter", specieFilter);
-  }, [specieFilter]);
-
-  useEffect(() => {
     ls.set("originFilter", originFilter);
-  }, [originFilter]);
-
-  useEffect(() => {
     ls.set("ordered", ordered);
-  }, [ordered]);
+  }, [characters, nameFilter, specieFilter, originFilter, ordered]);
 
   //EVENT HANDLERS ------------------------------------------
   const handleFilter = (data) => {
@@ -104,25 +93,19 @@ const App = () => {
     });
   }
 
+  //Dynamic route
   const renderCharacterDetail = (props) => {
     const routeCharacterId = parseInt(props.match.params.id);
-    const foundCharacter = characters.find((character) => {
-      return character.id === routeCharacterId;
-    });
+
+    const foundCharacter = characters.find(
+      (character) => character.id === parseInt(routeCharacterId)
+    );
     //console.log("Router props: ", props.match.params.id, foundCharacter);
-    if (foundCharacter !== undefined) {
+
+    if (foundCharacter) {
       return <CharacterDetail character={foundCharacter} />;
     } else {
-      // Ruta para cuando se escribe mal en el navegador la id del character
-      return (
-        <>
-          <Link className="goback" to="/">
-            <i className="fas fa-chevron-circle-left"></i>
-            Go back
-          </Link>
-          <NotFound />
-        </>
-      );
+      return <NotFound />; //The ID doesn't exists
     }
   };
 
@@ -133,8 +116,16 @@ const App = () => {
       <Switch>
         <Route exact path="/">
           <main className="mainContent">
-            <Filters handleFilter={handleFilter} handleReset={handleReset} />
+            <Filters
+              nameFilter={nameFilter}
+              specieFilter={specieFilter}
+              originFilter={originFilter}
+              orderFilter={ordered}
+              handleFilter={handleFilter}
+              handleReset={handleReset}
+            />
             {/* <ResetButton handleReset={handleReset} /> */}
+
             <CharacterList characters={filteredCharacters} />
           </main>
         </Route>
