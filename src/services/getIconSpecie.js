@@ -1,10 +1,10 @@
-const iconMartian = <i class="fas fa-rocket"></i>;
-const iconHuman = <i class="fas fa-user"></i>;
-const iconRobot = <i class="fas fa-robot"></i>;
-const iconMutant = <i class="fas fa-eye"></i>;
-const iconDecapodian = <i class="fas fa-pastafarianism"></i>;
-const iconOmicronian = <i class="fas fa-frog"></i>;
-const iconAmphibiosans = <i class="fas fa-hand-spock"></i>;
+const iconMartian = <i className="fas fa-rocket"></i>;
+const iconHuman = <i className="fas fa-user"></i>;
+const iconRobot = <i className="fas fa-robot"></i>;
+const iconMutant = <i className="fas fa-eye"></i>;
+const iconDecapodian = <i className="fas fa-pastafarianism"></i>;
+const iconOmicronian = <i className="fas fa-frog"></i>;
+const iconAmphibiosans = <i className="fas fa-hand-spock"></i>;
 
 const getIconSpecie = (species) => {
   if (species === "Martian") {

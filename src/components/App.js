@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import { useLocation, matchPath } from "react-router";
 import Header from "./Header";
 import Footer from "./Footer";
 import Filters from "./Filters";
@@ -8,7 +9,6 @@ import CharacterDetail from "./CharacterDetail";
 import NotFound from "./NotFound";
 import getApiData from "../services/getApiData";
 import ls from "../services/local-storage";
-//import ResetButton from "./ResetButton";
 
 const App = () => {
   const [characters, setCharacters] = useState(ls.get("characters", []));
@@ -21,7 +21,7 @@ const App = () => {
   );
   const [ordered, setOrdered] = useState(ls.get("ordered", false));
 
-  //COMPROBANDO SI HAY DATOS EN EL LOCALSTORAGE -------------
+  //Checking for data in LOCALSTORAGE -------------
   useEffect(() => {
     if (characters.length === 0) {
       getApiData().then((charactersData) => {
@@ -31,7 +31,7 @@ const App = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  //GUARDANDO EN LOCALSTORAGE -------------------------------
+  //Saving in LOCALSTORAGE -------------------------------
   useEffect(() => {
     ls.set("characters", characters);
     ls.set("nameFilter", nameFilter);
@@ -93,49 +93,49 @@ const App = () => {
     });
   }
 
-  //Dynamic route
-  const renderCharacterDetail = (props) => {
-    const routeCharacterId = parseInt(props.match.params.id);
-
-    const foundCharacter = characters.find(
-      (character) => character.id === parseInt(routeCharacterId)
-    );
-    //console.log("Router props: ", props.match.params.id, foundCharacter);
-
-    if (foundCharacter) {
-      return <CharacterDetail character={foundCharacter} />;
-    } else {
-      return <NotFound />; //The ID doesn't exists
-    }
-  };
+  //Dynamic route ---------------------------------------------------------------------
+  const { pathname } = useLocation();
+  const routeData = matchPath("character/:id", pathname);
+  const characterId = routeData !== null ? routeData.params.id : null;
+  const characterFound = characters.find(
+    (character) => character.id === parseInt(characterId)
+  );
 
   return (
     <>
       <Header />
 
-      <Switch>
-        <Route exact path="/">
-          <main className="mainContent">
-            <Filters
-              nameFilter={nameFilter}
-              specieFilter={specieFilter}
-              originFilter={originFilter}
-              orderFilter={ordered}
-              handleFilter={handleFilter}
-              handleReset={handleReset}
-            />
-            {/* <ResetButton handleReset={handleReset} /> */}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <section className="mainContent">
+              <Filters
+                nameFilter={nameFilter}
+                specieFilter={specieFilter}
+                originFilter={originFilter}
+                orderFilter={ordered}
+                handleFilter={handleFilter}
+                handleReset={handleReset}
+              />
 
-            <CharacterList characters={filteredCharacters} />
-          </main>
-        </Route>
+              <CharacterList characters={filteredCharacters} />
+            </section>
+          }
+        />
 
-        <Route path="/character/:id" render={renderCharacterDetail} />
+        {characterFound ? (
+          <Route
+            path="character/:id"
+            element={<CharacterDetail characterDetail={characterFound} />}
+          />
+        ) : (
+          <Route path="character/*" element={<NotFound />} />
+        )}
 
-        <Route>
-          <NotFound />
-        </Route>
-      </Switch>
+        <Route path="/*" element={<NotFound />} />
+        <Route path="character/*" element={<NotFound />} />
+      </Routes>
 
       <Footer />
     </>
