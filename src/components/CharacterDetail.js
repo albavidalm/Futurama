@@ -1,11 +1,18 @@
 import React from "react";
-import getIconSpecie from "../services/getIconSpecie";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import getIconSpecie from "../services/getIconSpecie";
 
 const CharacterDetail = ({ characterDetail }) => {
-  let sayings = characterDetail.sayings;
-  let said = sayings[Math.floor(Math.random() * sayings.length)];
+  const [saidValue, setSaidValue] = useState("");
 
+  const said = () => {
+    setSaidValue(
+      characterDetail.sayings[
+        Math.floor(Math.random() * characterDetail.sayings.length)
+      ]
+    );
+  };
   return (
     <article className="detail">
       <Link className="goback" to="/">
@@ -26,23 +33,37 @@ const CharacterDetail = ({ characterDetail }) => {
           <section>
             <ul className="detail__card--info-description">
               <li>
-                <span className="boldtitle">Specie: </span>
+                <p className="boldtitle">Specie: </p>
                 {getIconSpecie(characterDetail.specie)}
+                {characterDetail.specie}
               </li>
               <li>
-                <span className="boldtitle">Origin: </span>
+                <p className="boldtitle">Age: </p>
+                {characterDetail.age}
+              </li>
+              <li>
+                <p className="boldtitle">Origin: </p>
                 {characterDetail.origin}
               </li>
               <li>
-                <span className="boldtitle">Occupation: </span>
+                <p className="boldtitle">Occupation: </p>
                 {characterDetail.occupation}
               </li>
 
               <li>
-                <span className="boldtitle">Said: </span>
-                {said}
+                <p className="boldtitle">Said: </p>
+                {!saidValue ? (
+                  <p>{characterDetail.sayings[0]}</p>
+                ) : (
+                  <p>{saidValue}</p>
+                )}
               </li>
             </ul>
+            {characterDetail.sayings.length > 1 && (
+              <button onClick={said} title="Press">
+                Tell me more 🔀
+              </button>
+            )}
           </section>
         </div>
       </div>
