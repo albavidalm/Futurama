@@ -11,24 +11,45 @@
 }
 
 .detail {
-  margin: 0 auto;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background: #95f1b8cb;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 
-  &__card {
-    background-color: #95f1b8cb;
+  padding: 1rem 1rem 0 1rem;
+  width: 100%;
 
-    &--info {
-      color: white;
-      padding-left: 2rem;
-      line-height: 2rem;
-      &-title {
-        color: white;
+  max-width: 70rem;
+  height: 100%;
+  font-size: 1rem;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  &__img {
+    margin: 0 auto;
+  }
+  &__info {
+    &--title {
+      text-align: center;
+    }
+    &--description {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      &.said {
+        align-items: flex-start;
+      }
+      &--text {
+        font-weight: 700;
+        margin-right: 0.4rem;
       }
     }
   }
 }
-.boldtitle {
-  font-weight: bolder;
-}
+
 .fa-chevron-circle-left {
   font-size: 1.8rem;
   padding-right: 0.8rem;
