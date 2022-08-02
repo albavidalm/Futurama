@@ -8,11 +8,11 @@ const FilterByOrigin = ({ handleFilter, originFilter }) => {
     });
   };
   return (
-    <fieldset className="form__specie">
-      <label className="form__specie--label" htmlFor="origin">
+    <fieldset className="form__choose">
+      <label htmlFor="origin">
         Choose a home planet
         <select
-          className="form__specie--select"
+          className="form__choose--select"
           name="origin"
           id="origin"
           onChange={handleOnChange}

@@ -1,6 +1,47 @@
-.mainContent {
-  margin: 0 1.5rem;
+.wrapper {
   @include tablet {
-    margin: 0 40px;
+    padding: 1rem;
+  }
+}
+
+.main {
+  @include desktop {
+    max-width: 2000px;
+    margin: 0 auto;
+  }
+}
+
+.containerStars {
+  background: #000 url(../../assets/images/stars.png);
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100%;
+  z-index: 0;
+}
+
+.twinkling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent url(../../assets/images/twinkling.png) repeat top
+    center;
+  z-index: 1;
+  animation: move-twink-back 200s linear infinite;
+}
+
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
   }
 }

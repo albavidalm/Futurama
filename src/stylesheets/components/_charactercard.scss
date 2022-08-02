@@ -14,7 +14,7 @@
   padding: 1rem 1rem 0 1rem;
   width: 100%;
   @include tablet {
-    width: 13.5rem;
+    max-width: 13.5rem;
     height: 21.5rem;
     font-size: 0.9rem;
   }
@@ -83,6 +83,7 @@
   margin-left: 0.8rem;
   font-weight: bolder;
   font-style: italic;
+  color: rgb(63, 63, 63);
 }
 .planet-logo {
   width: 15%;

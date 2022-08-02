@@ -10,8 +10,8 @@ const FilterAlphabetically = (props) => {
 
   return (
     <>
-      <fieldset className="form__name">
-        <label className="form__specie">
+      <fieldset className="form__sort">
+        <label>
           <input
             className="form__checkbox"
             name="ordered"
@@ -21,7 +21,7 @@ const FilterAlphabetically = (props) => {
             onChange={handleChange}
             checked={props.ordered}
           />
-          Sort alphabetically
+          Sort <i class="fas fa-arrow-down-a-z"></i>
         </label>
       </fieldset>
     </>

@@ -1,4 +1,4 @@
-import photo from "../images/astronaut.png";
+import photo from "../assets/images/astronaut.png";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {

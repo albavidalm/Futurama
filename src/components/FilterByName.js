@@ -15,7 +15,7 @@ const FilterByName = ({ nameFilter, handleFilter }) => {
       </label>
       <input
         className="form__name--input"
-        type="text"
+        type="search"
         placeholder="Ex: Bender"
         name="name"
         id="name"

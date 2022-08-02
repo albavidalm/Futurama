@@ -8,11 +8,11 @@ const FilterBySpecie = ({ handleFilter, specieFilter }) => {
     });
   };
   return (
-    <fieldset className="form__specie">
-      <label className="form__specie--label" htmlFor="specie">
+    <fieldset className="form__choose">
+      <label htmlFor="specie">
         Choose a species
         <select
-          className="form__specie--select"
+          className="form__choose--select"
           name="specie"
           id="specie"
           onChange={handleOnChange}

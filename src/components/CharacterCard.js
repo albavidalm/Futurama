@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import getIconSpecie from "../services/getIconSpecie";
-import logo from "../images/Planet_Express_logo.svg";
+import logo from "../assets/images/Planet_Express_logo.svg";
 
 const CharacterCard = (props) => {
   return (

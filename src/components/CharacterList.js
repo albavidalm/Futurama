@@ -7,11 +7,7 @@ const CharacterList = (props) => {
     return <CharacterCard key={character.id} character={character} />;
   });
 
-  return (
-    <section>
-      <ul className="cards__character">{characterElements}</ul>
-    </section>
-  );
+  return <ul className="cards__character">{characterElements}</ul>;
 };
 
 export default CharacterList;

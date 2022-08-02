@@ -109,7 +109,7 @@ const App = () => {
         <Route
           path="/"
           element={
-            <section className="mainContent">
+            <section className="main wrapper">
               <Filters
                 nameFilter={nameFilter}
                 specieFilter={specieFilter}

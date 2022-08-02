@@ -17,9 +17,10 @@ const Filters = ({
     ev.preventDefault();
   };
   return (
-    <section>
-      <form className="form" onSubmit={handleSubmit}>
-        <FilterByName nameFilter={nameFilter} handleFilter={handleFilter} />
+    <form className="form" onSubmit={handleSubmit}>
+      <FilterByName nameFilter={nameFilter} handleFilter={handleFilter} />
+
+      <div className="form__filtersRow">
         <FilterBySpecie
           handleFilter={handleFilter}
           specieFilter={specieFilter}
@@ -32,9 +33,10 @@ const Filters = ({
           ordered={orderFilter}
           handleFilter={handleFilter}
         />
-        <ResetButton handleReset={handleReset} />
-      </form>
-    </section>
+      </div>
+
+      <ResetButton handleReset={handleReset} />
+    </form>
   );
 };
 
