@@ -9,10 +9,6 @@ const CharacterList = ({
   originFilter,
   handleReset,
 }) => {
-  const characterElements = characters.map((character) => {
-    return <CharacterCard key={character.id} character={character} />;
-  });
-
   if (characters.length === 0) {
     return (
       <NotFoundSearch
@@ -24,7 +20,15 @@ const CharacterList = ({
     );
   }
 
-  return <ul className="cards__character">{characterElements}</ul>;
+  const characterElements = characters.map((character) => {
+    return <CharacterCard key={character.id} character={character} />;
+  });
+
+  return (
+    <>
+      <ul className="cards__character">{characterElements}</ul>
+    </>
+  );
 };
 
 export default CharacterList;

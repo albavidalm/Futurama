@@ -9,6 +9,7 @@ import CharacterDetail from "./CharacterDetail";
 import NotFound from "./NotFound";
 import getApiData from "../services/getApiData";
 import ls from "../services/local-storage";
+import NotFoundSearch from "./NotFoundSearch";
 
 const App = () => {
   const [characters, setCharacters] = useState(ls.get("characters", []));
@@ -111,7 +112,7 @@ const App = () => {
         <Route
           path="/"
           element={
-            <section className="main wrapper">
+            <main className="main wrapper">
               <Filters
                 nameFilter={nameFilter}
                 specieFilter={specieFilter}
@@ -128,7 +129,14 @@ const App = () => {
                 originFilter={originFilter}
                 handleReset={handleReset}
               />
-            </section>
+              {/* <NotFoundSearch
+                characters={filteredCharacters}
+                search={nameFilter}
+                specieFilter={specieFilter}
+                originFilter={originFilter}
+                handleReset={handleReset}
+              /> */}
+            </main>
           }
         />
 
