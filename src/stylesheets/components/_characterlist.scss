@@ -1,5 +1,8 @@
 .cards__character {
-  height: 100vh;
+  // height: 100vh;
+  min-height: 100vh;
+  max-height: 100%;
+  padding-bottom: 2rem;
   &:hover .card {
     opacity: 0.6;
     transition: all 0.5s ease;
