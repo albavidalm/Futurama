@@ -1,8 +1,8 @@
 import React from "react";
 
-const FilterAlphabetically = (props) => {
+const FilterAlphabetically = ({ ordered, handleFilter }) => {
   const handleChange = (ev) => {
-    props.handleFilter({
+    handleFilter({
       checked: ev.currentTarget.checked,
       key: "ordered",
     });
@@ -19,7 +19,7 @@ const FilterAlphabetically = (props) => {
             value="ordered"
             type="checkbox"
             onChange={handleChange}
-            checked={props.ordered}
+            checked={ordered}
           />
           Sort <i className="fas fa-arrow-down-a-z"></i>
         </label>
