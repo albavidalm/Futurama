@@ -1,0 +1,21 @@
+.reset-btn {
+  width: auto;
+  margin: 0.6rem auto;
+}
+
+.goback {
+  color: white;
+  font-size: 2rem;
+  font-weight: bolder;
+  text-align: left;
+  position: relative;
+  margin-top: 1.6rem;
+  &__back:hover {
+    color: yellow;
+  }
+}
+
+.fa-chevron-circle-left {
+  font-size: 1.8rem;
+  padding-right: 0.8rem;
+}

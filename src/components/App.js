@@ -6,7 +6,7 @@ import Footer from "./Footer";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
-import NotFound from "./NotFound";
+import NotFound from "./NotFoundSearch";
 import getApiData from "../services/getApiData";
 import ls from "../services/local-storage";
 
@@ -119,7 +119,12 @@ const App = () => {
                 handleReset={handleReset}
               />
 
-              <CharacterList characters={filteredCharacters} />
+              <CharacterList
+                characters={filteredCharacters}
+                nameFilter={nameFilter}
+                specieFilter={specieFilter}
+                originFilter={originFilter}
+              />
             </section>
           }
         />

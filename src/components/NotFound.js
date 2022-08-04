@@ -1,20 +1,24 @@
-import photo from "../assets/images/astronaut.png";
-import { Link } from "react-router-dom";
+// import photo from "../assets/images/astronaut.png";
+import GoBack from "./ui/GoBack";
+import spaceship from "../assets/images/Spaceship_crash.png";
 
-const NotFound = () => {
+const NotFoundSearch = () => {
   return (
-    <>
-      <Link className="goback" to="/">
-        <i className="fas fa-chevron-circle-left"></i>
-        Go back
-      </Link>
+    <section className="notfound">
+      <GoBack />
 
       <h2 className="notfound__title">
-        There is a spaceman waiting in the sky
+        Maybe we are in a black hole because we can't find what you are looking
+        for.
       </h2>
-      <img className="notfound__img" src={photo} alt="Character not found" />
-    </>
+
+      <img
+        className="notfound__search--img"
+        src={spaceship}
+        alt="Character not found"
+      />
+    </section>
   );
 };
 
-export default NotFound;
+export default NotFoundSearch;

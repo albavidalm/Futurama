@@ -3,7 +3,7 @@ import FilterByName from "./FilterByName";
 import FilterBySpecie from "./FilterBySpecie";
 import FilterByOrigin from "./FilterByOrigin";
 import FilterAlphabetically from "./FilterAlphabetically";
-import ResetButton from "./ResetButton";
+import ResetButton from "./ui/ResetButton";
 
 const Filters = ({
   nameFilter,

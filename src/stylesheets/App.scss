@@ -2,11 +2,12 @@
 @import "core/reset";
 @import "core/mixins";
 @import "layout/body";
-@import "ui/buttons";
+@import "components/ui/buttons";
 @import "components/header";
 @import "components/charactercard";
 @import "components/characterlist";
 @import "components/characterdetail";
 @import "components/resetbutton";
 @import "components/filters";
+@import "components/notfound";
 @import "components/footer";

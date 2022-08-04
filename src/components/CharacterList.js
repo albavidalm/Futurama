@@ -1,12 +1,27 @@
 import React from "react";
 import CharacterCard from "./CharacterCard";
+import NotFoundSearch from "./NotFoundSearch";
 
-const CharacterList = (props) => {
-  const characterElements = props.characters.map((character) => {
-    //console.log(character);
+const CharacterList = ({
+  characters,
+  nameFilter,
+  specieFilter,
+  originFilter,
+}) => {
+  const characterElements = characters.map((character) => {
     return <CharacterCard key={character.id} character={character} />;
   });
 
+  if (characters.length === 0) {
+    return (
+      <NotFoundSearch
+        search={nameFilter}
+        specieFilter={specieFilter}
+        originFilter={originFilter}
+      />
+    );
+  }
+  console.log({ nameFilter });
   return <ul className="cards__character">{characterElements}</ul>;
 };
 

@@ -21,7 +21,7 @@ const FilterAlphabetically = (props) => {
             onChange={handleChange}
             checked={props.ordered}
           />
-          Sort <i class="fas fa-arrow-down-a-z"></i>
+          Sort <i className="fas fa-arrow-down-a-z"></i>
         </label>
       </fieldset>
     </>

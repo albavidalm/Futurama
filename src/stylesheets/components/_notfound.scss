@@ -1,0 +1,42 @@
+.notfound {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__title {
+    color: white;
+    margin-top: 6rem;
+  }
+  &__container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    @include tablet {
+      height: 100%;
+      max-width: 28rem;
+    }
+    &--img {
+      height: 28rem;
+    }
+  }
+  &__search {
+    &--title {
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: 1.5rem;
+      color: rgb(30, 30, 96);
+      letter-spacing: 0.1rem;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      top: 32%;
+      @include tablet {
+        font-size: 1.8rem;
+      }
+    }
+    &--img {
+      margin-bottom: 2rem;
+    }
+  }
+}

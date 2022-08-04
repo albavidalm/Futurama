@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import GoBack from "./ui/GoBack";
 import getIconSpecie from "../services/getIconSpecie";
 
 const CharacterDetail = ({ characterDetail }) => {
@@ -14,18 +14,17 @@ const CharacterDetail = ({ characterDetail }) => {
     );
   };
   return (
-    <>
-      <Link className="goback" to="/">
-        <i className="fas fa-chevron-circle-left"></i>
-        Go back
-      </Link>
+    <section className="details wrapper">
+      <GoBack />
       <article className="detail">
-        <img
-          className="detail__img"
-          src={characterDetail.picture}
-          alt={`Imagen de ${characterDetail.name}`}
-          title={characterDetail.name}
-        />
+        <div className="detail__container">
+          <img
+            className="detail__container--img"
+            src={characterDetail.picture}
+            alt={`Imagen de ${characterDetail.name}`}
+            title={characterDetail.name}
+          />
+        </div>
 
         <div className="detail__info">
           <h2 className="detail__info--title">{characterDetail.name}</h2>
@@ -68,7 +67,7 @@ const CharacterDetail = ({ characterDetail }) => {
           </section>
         </div>
       </article>
-    </>
+    </section>
   );
 };
 
