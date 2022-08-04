@@ -95,9 +95,9 @@ const App = () => {
 
   //Dynamic route ---------------------------------------------------------------------
   const { pathname } = useLocation();
-  const routeData = matchPath("character/:id", pathname);
+  const routeData = matchPath("/character/:characterId", pathname);
   // If route is valid --> render it, if not --> return null
-  const characterId = routeData !== null ? routeData.params.id : null;
+  const characterId = routeData !== null ? routeData.params.characterId : null;
   const characterFound = characters.find(
     (character) => character.id === parseInt(characterId)
   );
@@ -107,6 +107,7 @@ const App = () => {
       <Header />
 
       <Routes>
+        {/* Static Route */}
         <Route
           path="/"
           element={
@@ -131,14 +132,20 @@ const App = () => {
           }
         />
 
-        {characterFound ? (
+        {/* DYNAMIC ROUTES */}
+        {/* {characterFound ? (
           <Route
-            path="character/:id"
+            path="/character/:characterId"
             element={<CharacterDetail characterDetail={characterFound} />}
           />
         ) : (
           <Route path="character/*" element={<NotFound />} />
-        )}
+        )} */}
+
+        <Route
+          path="/character/:characterId"
+          element={<CharacterDetail characterDetail={characterFound} />}
+        />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

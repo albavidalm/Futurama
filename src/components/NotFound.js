@@ -1,4 +1,3 @@
-// import photo from "../assets/images/astronaut.png";
 import GoBack from "./ui/GoBack";
 import spaceship from "../assets/images/Spaceship_crash.png";
 

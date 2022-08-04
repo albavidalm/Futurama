@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import GoBack from "./ui/GoBack";
 import getIconSpecie from "../services/getIconSpecie";
+import NotFound from "./NotFound";
 
 const CharacterDetail = ({ characterDetail }) => {
   const [saidValue, setSaidValue] = useState("");
@@ -13,6 +14,11 @@ const CharacterDetail = ({ characterDetail }) => {
       ]
     );
   };
+
+  if (characterDetail === undefined) {
+    return <NotFound />;
+  }
+
   return (
     <section className="details wrapper">
       <GoBack />
