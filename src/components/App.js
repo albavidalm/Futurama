@@ -9,7 +9,7 @@ import CharacterDetail from "./CharacterDetail";
 import NotFound from "./NotFound";
 import getApiData from "../services/getApiData";
 import ls from "../services/local-storage";
-import NotFoundSearch from "./NotFoundSearch";
+// import NotFoundSearch from "./NotFoundSearch";
 
 const App = () => {
   const [characters, setCharacters] = useState(ls.get("characters", []));
@@ -155,7 +155,7 @@ const App = () => {
           element={<CharacterDetail characterDetail={characterFound} />}
         />
 
-        {/* <Route path="/*" element={<NotFound />} /> */}
+        <Route path="/*" element={<NotFound />} />
       </Routes>
 
       <Footer />
