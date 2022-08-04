@@ -6,7 +6,7 @@ import Footer from "./Footer";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
-import NotFound from "./NotFoundSearch";
+import NotFound from "./NotFound";
 import getApiData from "../services/getApiData";
 import ls from "../services/local-storage";
 
@@ -96,6 +96,7 @@ const App = () => {
   //Dynamic route ---------------------------------------------------------------------
   const { pathname } = useLocation();
   const routeData = matchPath("character/:id", pathname);
+  // If route is valid --> render it, if not --> return null
   const characterId = routeData !== null ? routeData.params.id : null;
   const characterFound = characters.find(
     (character) => character.id === parseInt(characterId)
@@ -124,6 +125,7 @@ const App = () => {
                 nameFilter={nameFilter}
                 specieFilter={specieFilter}
                 originFilter={originFilter}
+                handleReset={handleReset}
               />
             </section>
           }
@@ -138,8 +140,7 @@ const App = () => {
           <Route path="character/*" element={<NotFound />} />
         )}
 
-        <Route path="/*" element={<NotFound />} />
-        <Route path="character/*" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />

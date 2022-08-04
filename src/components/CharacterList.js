@@ -7,6 +7,7 @@ const CharacterList = ({
   nameFilter,
   specieFilter,
   originFilter,
+  handleReset,
 }) => {
   const characterElements = characters.map((character) => {
     return <CharacterCard key={character.id} character={character} />;
@@ -18,10 +19,11 @@ const CharacterList = ({
         search={nameFilter}
         specieFilter={specieFilter}
         originFilter={originFilter}
+        handleReset={handleReset}
       />
     );
   }
-  console.log({ nameFilter });
+
   return <ul className="cards__character">{characterElements}</ul>;
 };
 

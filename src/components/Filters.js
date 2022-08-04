@@ -35,7 +35,9 @@ const Filters = ({
         />
       </div>
 
-      <ResetButton handleReset={handleReset} />
+      <ResetButton handleReset={handleReset} isFilter={true}>
+        Reset <i className="fas fa-recycle"></i>
+      </ResetButton>
     </form>
   );
 };

@@ -1,6 +1,24 @@
 .reset-btn {
   width: auto;
   margin: 0.6rem auto;
+  cursor: pointer;
+}
+
+.reset-btn-back {
+  border: none;
+  background-color: $color-spaceship;
+  font-family: $font-main;
+  color: white;
+  font-size: 1.4rem;
+  padding: 0.8rem;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: rgb(193, 193, 193);
+    color: rgb(53, 53, 98);
+  }
 }
 
 .goback {
@@ -10,8 +28,9 @@
   text-align: left;
   position: relative;
   margin-top: 1.6rem;
-  &__back:hover {
-    color: yellow;
+  transition: all 0.3s ease;
+  &:hover {
+    color: $color-spaceship;
   }
 }
 

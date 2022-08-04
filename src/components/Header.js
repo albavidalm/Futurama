@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../assets/images/Futurama_logo.svg";
 import logoPlain from "../assets/images/Futurama_logo_plain.png";
 
 const Header = () => {

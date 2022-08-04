@@ -1,9 +1,23 @@
 import fry from "../assets/images/fry_sure.webp";
 import bubble from "../assets/images/bubble.png";
+import ResetButton from "./ui/ResetButton";
 
-const NotFoundSearch = ({ search, specieFilter, originFilter }) => {
+const NotFoundSearch = ({
+  search,
+  specieFilter,
+  originFilter,
+  handleReset,
+}) => {
   return (
     <section className="notfound">
+      <ResetButton
+        handleReset={handleReset}
+        isList={true}
+        className=" reset-btn-back "
+      >
+        BACK HOME <i className="fas fa-user-astronaut"></i>
+      </ResetButton>
+
       <div className="notfound__container">
         <img
           className="notfound__container--img"
@@ -12,8 +26,8 @@ const NotFoundSearch = ({ search, specieFilter, originFilter }) => {
         />
         <h2 className="notfound__search--title">
           Not sure if {search}{" "}
-          {/* {specieFilter !== "all" && <span>{specieFilter}</span>} */}
           {specieFilter !== "all" && `the ${specieFilter} `}
+          {/* {specieFilter !== "all" && <span>{specieFilter}</span>} */}
           {originFilter !== "all" && ` from planet ${originFilter}`} exists....
           or you are dumb.
         </h2>

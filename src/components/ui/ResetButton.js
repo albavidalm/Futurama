@@ -1,7 +1,11 @@
-const ResetButton = ({ handleReset }) => {
+const ResetButton = ({ handleReset, children, className }) => {
   return (
-    <button className="reset-btn" type="button" onClick={handleReset}>
-      Reset <i className="fas fa-recycle"></i>
+    <button
+      className={`reset-btn ${className}`}
+      type="button"
+      onClick={handleReset}
+    >
+      {children}
     </button>
   );
 };
