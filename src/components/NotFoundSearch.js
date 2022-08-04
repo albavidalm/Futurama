@@ -10,11 +10,7 @@ const NotFoundSearch = ({
 }) => {
   return (
     <section className="notfound">
-      <ResetButton
-        handleReset={handleReset}
-        isList={true}
-        className=" reset-btn-back "
-      >
+      <ResetButton handleReset={handleReset} className=" reset-btn-back ">
         BACK HOME <i className="fas fa-user-astronaut"></i>
       </ResetButton>
 

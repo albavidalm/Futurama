@@ -29,7 +29,7 @@ const CharacterCard = ({ character }) => {
         <div className="company">
           <img
             src={logo}
-            alt="PlanetExpresslogo"
+            alt="Planet Express logo"
             title="Planet Express"
             className="planet-logo"
           />
