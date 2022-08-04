@@ -147,7 +147,7 @@ const App = () => {
           element={<CharacterDetail characterDetail={characterFound} />}
         />
 
-        <Route path="*" element={<NotFound />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
 
       <Footer />

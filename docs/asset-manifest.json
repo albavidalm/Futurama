@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.0c28ad00.css",
-    "main.js": "./static/js/main.864111de.js",
+    "main.js": "./static/js/main.edd40add.js",
     "static/media/stars.png": "./static/media/stars.90c266f7d69f1ffb6137.png",
     "static/media/fry_sure.webp": "./static/media/fry_sure.2d9cfe0bd8b7b1816d8b.webp",
     "static/media/Spaceship_crash.png": "./static/media/Spaceship_crash.32d484859a0f3d332adc.png",
@@ -10,10 +10,10 @@
     "static/media/Planet_Express_logo.svg": "./static/media/Planet_Express_logo.2e3b987ac749ca4ac9961b0e94206e6b.svg",
     "index.html": "./index.html",
     "main.0c28ad00.css.map": "./static/css/main.0c28ad00.css.map",
-    "main.864111de.js.map": "./static/js/main.864111de.js.map"
+    "main.edd40add.js.map": "./static/js/main.edd40add.js.map"
   },
   "entrypoints": [
     "static/css/main.0c28ad00.css",
-    "static/js/main.864111de.js"
+    "static/js/main.edd40add.js"
   ]
 }

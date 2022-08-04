@@ -1,7 +1,7 @@
 import GoBack from "./ui/GoBack";
 import spaceship from "../assets/images/Spaceship_crash.png";
 
-const NotFoundSearch = () => {
+const NotFound = () => {
   return (
     <section className="notfound">
       <GoBack />
@@ -20,4 +20,4 @@ const NotFoundSearch = () => {
   );
 };
 
-export default NotFoundSearch;
+export default NotFound;
