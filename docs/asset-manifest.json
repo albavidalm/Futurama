@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "./static/css/main.0c28ad00.css",
+    "main.js": "./static/js/main.5de2d854.js",
+    "static/media/stars.png": "./static/media/stars.90c266f7d69f1ffb6137.png",
+    "static/media/fry_sure.webp": "./static/media/fry_sure.2d9cfe0bd8b7b1816d8b.webp",
+    "static/media/Spaceship_crash.png": "./static/media/Spaceship_crash.32d484859a0f3d332adc.png",
+    "static/media/Futurama_logo_plain.png": "./static/media/Futurama_logo_plain.88942a58ea69755f126b.png",
+    "static/media/bubble.png": "./static/media/bubble.905edc92b73c3f1f835e.png",
+    "static/media/Planet_Express_logo.svg": "./static/media/Planet_Express_logo.2e3b987ac749ca4ac9961b0e94206e6b.svg",
+    "index.html": "./index.html",
+    "main.0c28ad00.css.map": "./static/css/main.0c28ad00.css.map",
+    "main.5de2d854.js.map": "./static/js/main.5de2d854.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c28ad00.css",
+    "static/js/main.5de2d854.js"
+  ]
+}
